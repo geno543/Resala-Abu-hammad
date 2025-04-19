@@ -1,0 +1,191 @@
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { FaUsers, FaHandHoldingHeart, FaHome, FaArrowRight } from 'react-icons/fa';
+
+const Home = () => {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const impactNumbers = [
+    { icon: <FaUsers className="animate-float" />, number: '1000+', label: 'Volunteers' },
+    { icon: <FaHandHoldingHeart className="animate-float" />, number: '5000+', label: 'People Helped' },
+    { icon: <FaHome className="animate-float" />, number: '100+', label: 'Families Supported' }
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section with Gradient Background */}
+      <div className="relative h-[90vh] overflow-hidden">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)]">
+          {/* Animated Gradient Overlay */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_800px_at_100%_200px,rgba(255,255,255,0.1),transparent)]" />
+            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_800px_at_0%_800px,rgba(255,255,255,0.1),transparent)]" />
+          </div>
+        </div>
+
+        <div className="relative h-full">
+          <div className="container mx-auto px-4 h-full flex items-center">
+            <div className="text-white max-w-3xl">
+              <motion.span 
+                className="inline-block text-sm font-semibold uppercase tracking-wider mb-4 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm"
+                {...fadeInUp}
+              >
+                Making a Difference Together
+              </motion.span>
+              <motion.h1 
+                className="text-5xl md:text-7xl font-bold mb-6 text-shadow leading-tight"
+                {...fadeInUp}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Welcome to Resala Abu-Hammad
+              </motion.h1>
+              <motion.p 
+                className="text-xl md:text-2xl mb-8 text-gray-100"
+                {...fadeInUp}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                Together we can make a difference in our community through compassion, dedication, and unity.
+              </motion.p>
+              <motion.div
+                className="space-x-6"
+                {...fadeInUp}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <a href="/volunteer" className="btn-primary inline-flex items-center group">
+                  Join Us 
+                  <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a href="/donate" className="btn-secondary">Support Our Cause</a>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent" />
+        </div>
+      </div>
+
+      {/* Impact Numbers */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.h2 
+            className="section-title text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Our Impact
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {impactNumbers.map((item, index) => (
+              <motion.div
+                key={index}
+                className="impact-card group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-5xl text-[var(--gradient-start)] mb-6 transform group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                <div className="text-4xl font-bold mb-2 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                  {item.number}
+                </div>
+                <div className="text-gray-600 text-lg group-hover:text-gray-900 transition-colors duration-300">{item.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest News Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.h2 
+            className="section-title text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Latest News
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[1, 2, 3].map((_, index) => (
+              <motion.div
+                key={index}
+                className="news-card group transform hover:-translate-y-2 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="h-56 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)] relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_400px_at_50%_50%,rgba(255,255,255,0.1),transparent)] group-hover:opacity-30 transition-opacity duration-300" />
+                </div>
+                <div className="p-8 bg-white group-hover:bg-gray-50 transition-colors duration-300">
+                  <span className="text-sm font-semibold text-[var(--gradient-start)]">April 19, 2025</span>
+                  <h3 className="text-xl font-bold mt-2 mb-3 group-hover:text-[var(--gradient-start)] transition-colors duration-300">
+                    Making a Difference in Our Community
+                  </h3>
+                  <p className="text-gray-600 mb-4 group-hover:text-gray-900 transition-colors duration-300">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in facilisis nibh.
+                  </p>
+                  <a 
+                    href="/news" 
+                    className="inline-flex items-center text-[var(--gradient-start)] hover:text-[var(--gradient-end)] transition-colors font-semibold group"
+                  >
+                    Read More 
+                    <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)]" />
+        <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] bg-repeat opacity-10" />
+        
+        <div className="relative py-24">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-3xl mx-auto"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white text-shadow">Ready to Make a Difference?</h2>
+              <p className="text-xl md:text-2xl mb-12 text-white/90">Join us in our mission to help those in need and create positive change in our community</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a 
+                  href="/volunteer" 
+                  className="btn-primary bg-white text-gray-800 hover:bg-gray-100 group w-full sm:w-auto"
+                >
+                  <span className="relative z-10">Become a Volunteer</span>
+                  <FaArrowRight className="ml-2 inline-block transform group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a 
+                  href="/donate" 
+                  className="btn-secondary border-2 border-white text-black hover:bg-white/10 w-full sm:w-auto"
+                >
+                  Make a Donation
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Home;

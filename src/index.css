@@ -3,23 +3,83 @@
 @tailwind utilities;
 
 :root {
-  --primary-red: #FF0000;
-  --primary-blue: #0000FF;
+  --primary-red: #E53E3E;
+  --primary-blue: #3B82F6;
   --primary-white: #FFFFFF;
+  --gradient-start: #E53E3E;
+  --gradient-end: #D53F8C;
 }
 
 @layer base {
   body {
-    @apply font-sans;
+    @apply font-sans text-gray-800 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors;
+    @apply px-6 py-3 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] 
+           text-white rounded-full font-semibold shadow-lg hover:shadow-xl 
+           transform hover:-translate-y-0.5 transition-all duration-200 
+           focus:ring-2 focus:ring-offset-2 focus:ring-[var(--gradient-start)];
   }
   
   .btn-secondary {
-    @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors;
+    @apply px-6 py-3 bg-white text-gray-800 rounded-full font-semibold 
+           border-2 border-gray-200 shadow-md hover:shadow-lg hover:border-gray-300 
+           transform hover:-translate-y-0.5 transition-all duration-200
+           focus:ring-2 focus:ring-offset-2 focus:ring-gray-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow 
+           duration-300 overflow-hidden border border-gray-100;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-4 bg-gradient-to-r from-[var(--gradient-start)] 
+           to-[var(--gradient-end)] bg-clip-text text-transparent;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/60 
+           backdrop-blur-[2px];
+  }
+
+  .impact-card {
+    @apply card p-8 text-center hover:scale-105 transition-transform duration-300 
+           bg-gradient-to-b from-white to-gray-50;
+  }
+
+  .news-card {
+    @apply card hover:scale-[1.02] transition-transform duration-300;
+  }
+
+  .cta-section {
+    @apply bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] 
+           text-white shadow-xl;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 }
