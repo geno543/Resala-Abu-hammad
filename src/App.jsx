@@ -7,8 +7,23 @@ import Services from './pages/Services';
 import Volunteer from './pages/Volunteer';
 import Donate from './pages/Donate';
 import News from './pages/News';
+import { useEffect } from 'react';
 
 function App() {
+  // Set CSS variables for RTL support
+  useEffect(() => {
+    // Add RTL class to body for any additional RTL-specific styling
+    document.body.classList.add('rtl');
+    
+    // Set the direction attribute on the html element
+    document.documentElement.setAttribute('dir', 'rtl');
+    
+    return () => {
+      document.body.classList.remove('rtl');
+      document.documentElement.removeAttribute('dir');
+    };
+  }, []);
+
   return (
     <Router>
       <Routes>

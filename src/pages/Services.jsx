@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaArrowRight, FaPlay, FaImage } from 'react-icons/fa';
+import { FaTimes, FaArrowLeft, FaPlay, FaImage } from 'react-icons/fa';
 
 const Services = () => {
   const [selectedActivity, setSelectedActivity] = useState(null);
@@ -8,25 +8,25 @@ const Services = () => {
   const activities = [
     {
       id: 1,
-      title: 'Food Distribution',
-      arabicTitle: 'توزيع الطعام',
-      description: 'We provide food packages to families in need throughout the year, with special campaigns during Ramadan.',
+      title: 'توزيع الطعام',
+      englishTitle: 'Food Distribution',
+      description: 'نقدم حزم غذائية للعائلات المحتاجة على مدار العام، مع حملات خاصة خلال شهر رمضان المبارك.',
       images: ['/images/food1.jpg', '/images/food2.jpg'],
       videos: ['/videos/food-distribution.mp4'],
     },
     {
       id: 2,
-      title: 'Education Support',
-      arabicTitle: 'دعم التعليم',
-      description: 'Providing educational materials, tutoring services, and school supplies to students from low-income families.',
+      title: 'دعم التعليم',
+      englishTitle: 'Education Support',
+      description: 'توفير المواد التعليمية وخدمات التدريس الخصوصي والمستلزمات المدرسية للطلاب من العائلات ذات الدخل المنخفض.',
       images: ['/images/education1.jpg', '/images/education2.jpg'],
       videos: ['/videos/education-program.mp4'],
     },
     {
       id: 3,
-      title: 'Medical Assistance',
-      arabicTitle: 'المساعدة الطبية',
-      description: 'Offering medical support, organizing health campaigns, and providing necessary medications to those in need.',
+      title: 'المساعدة الطبية',
+      englishTitle: 'Medical Assistance',
+      description: 'تقديم الدعم الطبي وتنظيم الحملات الصحية وتوفير الأدوية اللازمة للمحتاجين.',
       images: ['/images/medical1.jpg', '/images/medical2.jpg'],
       videos: ['/videos/medical-camp.mp4'],
     },
@@ -41,40 +41,40 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative py-24 overflow-hidden">
+      <div className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)]">
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_800px_at_100%_200px,rgba(255,255,255,0.1),transparent)]" />
-            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_800px_at_0%_800px,rgba(255,255,255,0.1),transparent)]" />
+            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_800px_at_0%_200px,rgba(255,255,255,0.1),transparent)]" />
+            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_800px_at_100%_800px,rgba(255,255,255,0.1),transparent)]" />
           </div>
         </div>
         <div className="relative container mx-auto px-4 text-center">
-          <motion.span 
-            className="inline-block text-sm font-semibold uppercase tracking-wider mb-4 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm text-white"
+          <motion.span
+            className="inline-block text-xs md:text-sm font-semibold uppercase tracking-wider mb-4 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm text-white"
             {...fadeInUp}
           >
-            Our Services
+            خدماتنا
           </motion.span>
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow font-arabic"
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 text-shadow"
             {...fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            خدماتنا
+            أنشطتنا الخيرية
           </motion.h1>
-          <motion.p 
-            className="text-xl text-white/90 max-w-3xl mx-auto"
+          <motion.p
+            className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
-            Discover our various charitable activities and services that make a difference in our community
+            اكتشف أنشطتنا وخدماتنا الخيرية المتنوعة التي تحدث فرقًا في مجتمعنا
           </motion.p>
         </div>
       </div>
 
       {/* Activities Grid */}
-      <div className="container mx-auto px-4 -mt-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 -mt-8 md:-mt-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {activities.map((activity, index) => (
             <motion.div
               key={activity.id}
@@ -84,24 +84,24 @@ const Services = () => {
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-56 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)] overflow-hidden rounded-t-2xl">
+              <div className="relative h-48 md:h-56 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)] overflow-hidden rounded-t-2xl">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_400px_at_50%_50%,rgba(255,255,255,0.1),transparent)] group-hover:opacity-30 transition-opacity duration-300" />
               </div>
-              <div className="p-8 bg-white rounded-b-2xl">
-                <h3 className="text-2xl font-bold mb-2 font-arabic text-right bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
-                  {activity.arabicTitle}
+              <div className="p-6 md:p-8 bg-white rounded-b-2xl">
+                <h3 className="text-xl md:text-2xl font-bold mb-2 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                  {activity.title}
                 </h3>
-                <h4 className="text-xl mb-4 text-gray-800">{activity.title}</h4>
-                <p className="text-gray-600 mb-6 group-hover:text-gray-900 transition-colors duration-300">
+                <h4 className="text-base md:text-lg mb-3 md:mb-4 text-gray-800">{activity.englishTitle}</h4>
+                <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base group-hover:text-gray-900 transition-colors duration-300">
                   {activity.description}
                 </p>
                 <button
                   onClick={() => setSelectedActivity(activity)}
                   className="btn-primary w-full group"
                 >
-                  Learn More
-                  <FaArrowRight className="ml-2 inline-block transform group-hover:translate-x-1 transition-transform" />
+                  المزيد من التفاصيل
+                  <FaArrowLeft className="mr-2 inline-block transform group-hover:-translate-x-1 transition-transform" />
                 </button>
               </div>
             </motion.div>
@@ -126,14 +126,8 @@ const Services = () => {
               className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
               onClick={e => e.stopPropagation()}
             >
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-8">
-                  <div>
-                    <h2 className="text-3xl font-bold font-arabic text-right mb-2 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
-                      {selectedActivity.arabicTitle}
-                    </h2>
-                    <h3 className="text-2xl text-gray-800">{selectedActivity.title}</h3>
-                  </div>
+              <div className="p-6 md:p-8">
+                <div className="flex justify-between items-center mb-6 md:mb-8">
                   <motion.button
                     whileHover={{ rotate: 90 }}
                     onClick={() => setSelectedActivity(null)}
@@ -141,23 +135,29 @@ const Services = () => {
                   >
                     <FaTimes size={24} />
                   </motion.button>
+                  <div className="text-right">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-1 md:mb-2 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                      {selectedActivity.title}
+                    </h2>
+                    <h3 className="text-xl md:text-2xl text-gray-800">{selectedActivity.englishTitle}</h3>
+                  </div>
                 </div>
 
-                <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                <p className="text-gray-600 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
                   {selectedActivity.description}
                 </p>
 
                 {/* Image Gallery */}
-                <div className="mb-12">
-                  <h3 className="text-xl font-bold mb-6 flex items-center">
-                    <FaImage className="mr-2 text-[var(--gradient-start)]" />
-                    Photo Gallery
+                <div className="mb-8 md:mb-12">
+                  <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 flex items-center justify-end">
+                    معرض الصور
+                    <FaImage className="ml-2 text-[var(--gradient-start)]" />
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     {selectedActivity.images.map((image, index) => (
                       <motion.div
                         key={index}
-                        className="relative h-64 rounded-xl overflow-hidden group cursor-pointer"
+                        className="relative h-48 md:h-64 rounded-xl overflow-hidden group cursor-pointer"
                         whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -173,11 +173,11 @@ const Services = () => {
 
                 {/* Video Gallery */}
                 <div>
-                  <h3 className="text-xl font-bold mb-6 flex items-center">
-                    <FaPlay className="mr-2 text-[var(--gradient-start)]" />
-                    Video Gallery
+                  <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 flex items-center justify-end">
+                    معرض الفيديو
+                    <FaPlay className="ml-2 text-[var(--gradient-start)]" />
                   </h3>
-                  <div className="grid grid-cols-1 gap-6">
+                  <div className="grid grid-cols-1 gap-4 md:gap-6">
                     {selectedActivity.videos.map((video, index) => (
                       <div key={index} className="relative rounded-xl overflow-hidden shadow-lg">
                         <video
@@ -186,7 +186,7 @@ const Services = () => {
                           poster={selectedActivity.images[0]}
                         >
                           <source src={video} type="video/mp4" />
-                          Your browser does not support the video tag.
+                          متصفحك لا يدعم تشغيل الفيديو.
                         </video>
                       </div>
                     ))}

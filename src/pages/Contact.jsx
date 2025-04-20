@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaArrowRight } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaArrowLeft } from 'react-icons/fa';
 
 const Contact = () => {
   const [contactForm, setContactForm] = useState({
@@ -29,26 +29,26 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <FaPhone />,
-      title: 'Phone',
+      title: 'الهاتف',
       content: '+20 123 456 789',
       href: 'tel:+201234567890',
     },
     {
       icon: <FaEnvelope />,
-      title: 'Email',
+      title: 'البريد الإلكتروني',
       content: 'info@resala-abuhammad.org',
       href: 'mailto:info@resala-abuhammad.org',
     },
     {
       icon: <FaMapMarkerAlt />,
-      title: 'Address',
-      content: 'Abu-Hammad, Sharqia, Egypt',
+      title: 'العنوان',
+      content: 'أبو حماد، الشرقية، مصر',
       href: 'https://goo.gl/maps/yourLocation',
     },
     {
       icon: <FaClock />,
-      title: 'Working Hours',
-      content: 'Sun-Thu: 9:00 AM - 5:00 PM',
+      title: 'ساعات العمل',
+      content: 'الأحد-الخميس: ٩:٠٠ ص - ٥:٠٠ م',
     },
   ];
 
@@ -61,67 +61,67 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative py-24 overflow-hidden">
+      <div className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)]">
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_800px_at_100%_200px,rgba(255,255,255,0.1),transparent)]" />
-            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_800px_at_0%_800px,rgba(255,255,255,0.1),transparent)]" />
+            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_800px_at_0%_200px,rgba(255,255,255,0.1),transparent)]" />
+            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_800px_at_100%_800px,rgba(255,255,255,0.1),transparent)]" />
           </div>
         </div>
         <div className="relative container mx-auto px-4 text-center">
-          <motion.span 
-            className="inline-block text-sm font-semibold uppercase tracking-wider mb-4 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm text-white"
+          <motion.span
+            className="inline-block text-xs md:text-sm font-semibold uppercase tracking-wider mb-4 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm text-white"
             {...fadeInUp}
           >
-            Get in Touch
+            تواصل معنا
           </motion.span>
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold text-white mb-6 text-shadow"
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 text-shadow"
             {...fadeInUp}
             transition={{ delay: 0.2 }}
           >
-            Contact Us
+            اتصل بنا
           </motion.h1>
-          <motion.p 
-            className="text-xl text-white/90 max-w-3xl mx-auto"
+          <motion.p
+            className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            هل لديك أسئلة؟ نحن نحب أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.
           </motion.p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 -mt-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 -mt-8 md:-mt-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <motion.div 
-              className="bg-white rounded-2xl shadow-xl p-8"
+          <div className="space-y-6 md:space-y-8">
+            <motion.div
+              className="bg-white rounded-2xl shadow-xl p-6 md:p-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold mb-8 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
-                Contact Information
+              <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                معلومات الاتصال
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {contactInfo.map((info, index) => (
                   <motion.a
                     key={index}
                     href={info.href}
-                    className={`group p-4 rounded-xl transition-all duration-300 ${info.href ? 'hover:bg-gray-50 cursor-pointer' : ''}`}
+                    className={`group p-3 md:p-4 rounded-xl transition-all duration-300 ${info.href ? 'hover:bg-gray-50 cursor-pointer' : ''}`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="flex items-start">
-                      <div className="text-2xl text-[var(--gradient-start)] mr-4 group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-xl md:text-2xl text-[var(--gradient-start)] ml-3 md:ml-4 group-hover:scale-110 transition-transform duration-300">
                         {info.icon}
                       </div>
                       <div>
-                        <h3 className="font-bold mb-1">{info.title}</h3>
-                        <p className="text-gray-600 group-hover:text-gray-900 transition-colors duration-300">
+                        <h3 className="font-bold mb-1 text-sm md:text-base">{info.title}</h3>
+                        <p className="text-gray-600 text-sm md:text-base group-hover:text-gray-900 transition-colors duration-300">
                           {info.content}
                         </p>
                       </div>
@@ -132,21 +132,21 @@ const Contact = () => {
             </motion.div>
 
             {/* Map */}
-            <motion.div 
-              className="bg-white rounded-2xl shadow-xl p-8 overflow-hidden"
+            <motion.div
+              className="bg-white rounded-2xl shadow-xl p-6 md:p-8 overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold mb-8 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
-                Our Location
+              <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                موقعنا
               </h2>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  title="Resala Abu-Hammad Location"
+                  title="موقع رسالة أبو حماد"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1234.5678!2d31.123456!3d30.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA3JzM0LjQiTiAzMcKwMDcnMzQuNCJF!5e0!3m2!1sen!2seg!4v1234567890"
                   width="100%"
-                  height="300"
+                  height="250"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
@@ -158,21 +158,21 @@ const Contact = () => {
           </div>
 
           {/* Forms */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {/* Contact Form */}
-            <motion.div 
-              className="bg-white rounded-2xl shadow-xl p-8"
+            <motion.div
+              className="bg-white rounded-2xl shadow-xl p-6 md:p-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold mb-8 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
-                Send us a Message
+              <h2 className="text-xl md:text-2xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                أرسل لنا رسالة
               </h2>
-              <form onSubmit={handleContactSubmit} className="space-y-6">
+              <form onSubmit={handleContactSubmit} className="space-y-4 md:space-y-6">
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Name
+                  <label className="block text-gray-700 font-semibold mb-2 text-sm md:text-base">
+                    الاسم
                   </label>
                   <input
                     type="text"
@@ -183,8 +183,8 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Email
+                  <label className="block text-gray-700 font-semibold mb-2 text-sm md:text-base">
+                    البريد الإلكتروني
                   </label>
                   <input
                     type="email"
@@ -195,8 +195,8 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Subject
+                  <label className="block text-gray-700 font-semibold mb-2 text-sm md:text-base">
+                    الموضوع
                   </label>
                   <input
                     type="text"
@@ -207,13 +207,13 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-700 font-semibold mb-2">
-                    Message
+                  <label className="block text-gray-700 font-semibold mb-2 text-sm md:text-base">
+                    الرسالة
                   </label>
                   <textarea
                     value={contactForm.message}
                     onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-[var(--gradient-start)] focus:ring-2 focus:ring-[var(--gradient-start)]/20 transition-all duration-300 h-32"
+                    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-[var(--gradient-start)] focus:ring-2 focus:ring-[var(--gradient-start)]/20 transition-all duration-300 h-24 md:h-32"
                     required
                   ></textarea>
                 </div>
@@ -223,24 +223,24 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Send Message
-                  <FaArrowRight className="ml-2 inline-block transform group-hover:translate-x-1 transition-transform" />
+                  إرسال الرسالة
+                  <FaArrowLeft className="mr-2 inline-block transform group-hover:-translate-x-1 transition-transform" />
                 </motion.button>
               </form>
             </motion.div>
 
             {/* Newsletter Subscription */}
-            <motion.div 
-              className="bg-white rounded-2xl shadow-xl p-8"
+            <motion.div
+              className="bg-white rounded-2xl shadow-xl p-6 md:p-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
-                Subscribe to Newsletter
+              <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                اشترك في النشرة الإخبارية
               </h2>
-              <p className="text-gray-600 mb-6">
-                Stay updated with our latest news and activities
+              <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
+                ابق على اطلاع بأحدث أخبارنا وأنشطتنا
               </p>
               <form onSubmit={handleNewsletterSubmit} className="space-y-4">
                 <div className="relative">
@@ -248,7 +248,7 @@ const Contact = () => {
                     type="email"
                     value={newsletter.email}
                     onChange={(e) => setNewsletter({ email: e.target.value })}
-                    placeholder="Enter your email address"
+                    placeholder="أدخل بريدك الإلكتروني"
                     className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-[var(--gradient-start)] focus:ring-2 focus:ring-[var(--gradient-start)]/20 transition-all duration-300"
                     required
                   />
@@ -259,8 +259,8 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <FaPaperPlane className="mr-2 transform group-hover:translate-x-1 transition-transform" />
-                  Subscribe
+                  <FaPaperPlane className="ml-2 transform group-hover:-translate-x-1 transition-transform" />
+                  اشترك
                 </motion.button>
               </form>
             </motion.div>
