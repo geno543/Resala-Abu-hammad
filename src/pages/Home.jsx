@@ -35,14 +35,14 @@ const Home = () => {
                 className="inline-block text-xs md:text-sm font-semibold uppercase tracking-wider mb-4 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm"
                 {...fadeInUp}
               >
-                نصنع الفرق معًا
+                نفعل الخير بإحسان
               </motion.span>
               <motion.h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-shadow leading-tight"
                 {...fadeInUp}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                مرحبًا بكم في رسالة أبو حماد
+                مرحبًا بكم في جمعية رسالة أبوحماد
               </motion.h1>
               <motion.p
                 className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-gray-100"
