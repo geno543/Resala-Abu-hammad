@@ -30,8 +30,12 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: 'الهاتف',
-      content: '+20 123 456 789',
-      href: 'tel:+201234567890',
+      content: '+201065309906',
+      href: 'tel:+201065309906',
+    },
+    {
+      content: '+201159092590',
+      href: 'tel:+201159092590',
     },
     {
       icon: <FaEnvelope />,
@@ -42,8 +46,8 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt />,
       title: 'العنوان',
-      content: 'أبو حماد، الشرقية، مصر',
-      href: 'https://goo.gl/maps/yourLocation',
+      content: 'أبو حماد (بجوار المزلقان الجديد)، الشرقية، مصر',
+      href: 'https://maps.app.goo.gl/AYhLxvkZGFpfky8x6',
     },
     {
       icon: <FaClock />,
@@ -143,7 +147,7 @@ const Contact = () => {
               </h2>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  title="موقع رسالة أبو حماد"
+                  title="موقع رسالة أبوحماد"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1234.5678!2d31.123456!3d30.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA3JzM0LjQiTiAzMcKwMDcnMzQuNCJF!5e0!3m2!1sen!2seg!4v1234567890"
                   width="100%"
                   height="250"
@@ -237,7 +241,7 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
-                اشترك في النشرة الإخبارية
+                اشترك في النشرة الإخبارية ليصلك كل جديد
               </h2>
               <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
                 ابق على اطلاع بأحدث أخبارنا وأنشطتنا
