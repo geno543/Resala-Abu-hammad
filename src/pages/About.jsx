@@ -136,6 +136,51 @@ const About = () => {
           </div>
         </div>
       </section>
+      {/* Volunteer Achievements */}
+      <section className="py-12 md:py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            className="section-title text-center mb-8 md:mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            إنجازات المتطوعين
+          </motion.h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {achievements.map((achievement, index) => (
+              <motion.div
+                key={achievement.id}
+                className="news-card group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="h-48 md:h-56 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)] relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_400px_at_50%_50%,rgba(255,255,255,0.1),transparent)] group-hover:opacity-30 transition-opacity duration-300" />
+                </div>
+                <div className="p-4 md:p-8 bg-white group-hover:bg-gray-50 transition-colors duration-300">
+                  <div className="flex items-center mb-3 md:mb-4">
+                    <FaTrophy className="text-xl md:text-2xl text-[var(--gradient-start)] ml-2" />
+                    <h3 className="text-lg md:text-xl font-bold group-hover:text-[var(--gradient-start)] transition-colors duration-300">
+                      {achievement.volunteer}
+                    </h3>
+                  </div>
+                  <p className="font-bold mb-2 text-sm md:text-base bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                    {achievement.role}
+                  </p>
+                  <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base group-hover:text-gray-900 transition-colors duration-300">
+                    {achievement.achievement}
+                  </p>
+                  <p className="text-xs md:text-sm text-gray-500">{achievement.timing}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
