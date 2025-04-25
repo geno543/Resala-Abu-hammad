@@ -20,10 +20,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <FaFacebook />, url: 'https://facebook.com/resala.abuhammad' },
-    { icon: <FaInstagram />, url: 'https://instagram.com/resala.abuhammad' },
-    { icon: <FaTwitter />, url: 'https://twitter.com/resala_abuhammad' },
-    { icon: <FaYoutube />, url: 'https://youtube.com/resala_abuhammad' }
+    { icon: <FaFacebook />, url: 'https://www.facebook.com/Resala.AboHamad/' },
   ];
 
   return (
