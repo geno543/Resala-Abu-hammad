@@ -2,9 +2,10 @@ import { FaPhone, FaMapMarkerAlt, FaClock, FaEnvelope } from 'react-icons/fa';
 
 const PreHeader = () => {
   const contactInfo = [
-    { icon: <FaPhone />, text: '+20 123 456 789', href: 'tel:+201234567890' },
+    { icon: <FaPhone />, text: '+201065309906', href: 'tel:+201065309906' },
+    { icon: <FaPhone />, text: '+201159092590', href: 'tel:+201159092590' },
     { icon: <FaEnvelope />, text: 'info@resala-abuhammad.org', href: 'mailto:info@resala-abuhammad.org' },
-    { icon: <FaMapMarkerAlt />, text: 'أبو حماد، الشرقية، مصر', href: 'https://goo.gl/maps/yourLocation' },
+    { icon: <FaMapMarkerAlt />, text: 'أبو حماد (بجوار المزلقان الجديد)، الشرقية، مصر',, href: 'https://maps.app.goo.gl/AYhLxvkZGFpfky8x6' },
     { icon: <FaClock />, text: 'الأحد-الخميس ٩:٠٠ ص - ٥:٠٠ م' }
   ];
 
