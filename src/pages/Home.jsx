@@ -10,9 +10,9 @@ const Home = () => {
   };
 
   const impactNumbers = [
-    { icon: <FaUsers className="animate-float" />, number: '+1000', label: 'متطوع' },
-    { icon: <FaHandHoldingHeart className="animate-float" />, number: '+5000', label: 'شخص تمت مساعدته' },
-    { icon: <FaHome className="animate-float" />, number: '+100', label: 'عائلة تم دعمها' }
+    { icon: <FaUsers className="animate-float" />, number: '+100', label: 'متطوع' },
+    { icon: <FaHandHoldingHeart className="animate-float" />, number: '+30', label: 'قرية مستفيدة' },
+    { icon: <FaHome className="animate-float" />, number: '+500', label: 'عائلة تم دعمها' }
   ];
 
   return (
