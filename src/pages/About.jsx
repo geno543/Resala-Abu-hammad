@@ -2,6 +2,33 @@ import { motion } from 'framer-motion';
 import { FaTrophy, FaMedal, FaStar, FaHandHoldingHeart, FaQuoteRight } from 'react-icons/fa';
 
 const About = () => {
+  const achievements = [
+    {
+      id: 1,
+      volunteer: 'أحمد محمد',
+      role: 'مسؤول توزيع الطعام',
+      achievement: 'نجح في تنسيق توزيع أكثر من 1000 حزمة غذائية خلال رمضان 2024',
+      timing: 'مارس 2024',
+      image: '/images/achievements/food-distribution.jpg',
+    },
+    {
+      id: 2,
+      volunteer: 'فاطمة علي',
+      role: 'منسقة برنامج التعليم',
+      achievement: 'أسست برنامج تعليمي ساعد أكثر من 50 طالبًا على تحسين أدائهم الأكاديمي',
+      timing: 'فبراير 2024',
+      image: '/images/achievements/education.jpg',
+    },
+    {
+      id: 3,
+      volunteer: 'عمر حسن',
+      role: 'منظم المخيمات الطبية',
+      achievement: 'نظم مخيمات طبية خدمت أكثر من 500 مريض في المناطق المحرومة',
+      timing: 'يناير 2024',
+      image: '/images/achievements/medical.jpg',
+    },
+  ];
+
   const impactAreas = [
     {
       title: 'التعليم',
