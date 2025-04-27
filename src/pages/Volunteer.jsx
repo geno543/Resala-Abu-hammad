@@ -19,7 +19,8 @@ const Volunteer = () => {
     phone: '',
     age: '',
     address: '',
-    experience: '',
+    ID: '',
+    GraduationDate: '',
   });
 
   const activities = [
