@@ -11,7 +11,7 @@ const Services = () => {
       title: 'الإطعام',
       description: 'نقدم حزم غذائية للعائلات المحتاجة على مدار العام، مع حملات خاصة خلال شهر رمضان المبارك.',
       images: ['/images/إطعام-صورة-1.jpg', '/images/إطعام-صورة-2.jpg'],
-      videos: ['/images/إطعام-فيديو.mp4'],
+      videos: ['/images/FoodVideo.mp4'],
     },
     {
       id: 2,
