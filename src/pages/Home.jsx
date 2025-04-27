@@ -42,7 +42,7 @@ const Home = () => {
                 {...fadeInUp}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                مرحبًا بكم في جمعية رسالة أبوحماد
+                مرحبًا بكم في رسالة أبوحماد
               </motion.h1>
               <motion.p
                 className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-gray-100"
