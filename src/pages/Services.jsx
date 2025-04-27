@@ -7,11 +7,11 @@ const Services = () => {
 
   const activities = [
     {
-      id: 1,
-      title: 'الإطعام',
-      description: 'نقدم حزم غذائية للعائلات المحتاجة على مدار العام، مع حملات خاصة خلال شهر رمضان المبارك.',
-      images: ['/images/إطعام-صورة-1.jpg', '/images/إطعام-صورة-2.jpg'],
-      videos: ['public/images/FoodVideo.mp4'],
+     id: 1,
+     title: 'الإطعام',
+    description: 'نقدم حزم غذائية للعائلات المحتاجة على مدار العام، مع حملات خاصة خلال شهر رمضان المبارك.',
+    images: ['/images/إطعام-صورة-1.jpg', '/images/إطعام-صورة-2.jpg'],
+    videos: ['/images/FoodVideo.mp4'],
     },
     {
       id: 2,
