@@ -52,7 +52,7 @@ const Donate = () => {
             className="inline-block text-xs md:text-sm font-semibold uppercase tracking-wider mb-4 bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm text-white"
             {...fadeInUp}
           >
-            ادعم قضيتنا
+            كن ذا أثر
           </motion.span>
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 text-shadow"
