@@ -32,10 +32,6 @@ const Contact = () => {
       title: 'الهاتف',
       content: '+201065309906',
       href: 'tel:+201065309906',
-    },
-    {
-       icon: <FaPhone />,
-      title: '-2 الهاتف',
       content: '+201159092590',
       href: 'tel:+201159092590',
     },
@@ -193,7 +189,7 @@ const Contact = () => {
                     البريد الإلكتروني
                   </label>
                   <input
-                    type="email"
+                    type="number"
                     value={contactForm.email}
                     onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                     className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-[var(--gradient-start)] focus:ring-2 focus:ring-[var(--gradient-start)]/20 transition-all duration-300"
