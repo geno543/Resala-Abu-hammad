@@ -34,6 +34,8 @@ const Contact = () => {
       href: 'tel:+201065309906',
     },
     {
+       icon: <FaPhone />,
+      title: '2-الهاتف',
       content: '+201159092590',
       href: 'tel:+201159092590',
     },
