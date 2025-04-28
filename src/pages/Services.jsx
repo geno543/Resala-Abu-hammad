@@ -45,7 +45,7 @@ const Services = () => {
       id: 6,
       title: 'الزيارات',
       description: 'نشاط الزيارات في جمعية رسالة هو لحظة إنسانية صادقة، يذهب فيها المتطوعون بأنفسهم لاحتضان قلوب أنهكها المرض أو الوحدة، حاملين دفء الكلام ولمسة الأمل لمن ظنّ أن لا أحد يطرق بابه.',
-      images: ['/images/visit/visit.jpg', '/images/visit/visit-2.jpg'],
+      images: ['/images/visit/visit.jpg', '/images/visit/Visit-2.jpg'],
       videos: ['/images/visit/Visit-video.mp4'],
     },
      {
