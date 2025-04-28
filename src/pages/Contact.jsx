@@ -45,7 +45,7 @@ const Contact = () => {
       icon: <FaMapMarkerAlt />,
       title: 'العنوان',
       content: 'أبو حماد (بجوار المزلقان الجديد)، الشرقية، مصر',
-      href: 'https://maps.app.goo.gl/7kobi44qqovf3JmC6',
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6872.934383574497!2d31.678912026864484!3d30.536101842923944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f81d8ec12b8dcd%3A0x414671d55e82c76b!2z2KzZhdi52YrYqSDYsdiz2KfZhNipINmE2YTYpdi52YXYp9mEINin2YTYrtmK2LHZitipINmB2LHYuSDYp9io2YjYrdmF2KfYrw!5e0!3m2!1sar!2seg!4v1745883658344!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     },
     {
       icon: <FaClock />,
