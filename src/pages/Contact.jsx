@@ -45,7 +45,7 @@ const Contact = () => {
       icon: <FaMapMarkerAlt />,
       title: 'العنوان',
       content: 'أبو حماد (بجوار المزلقان الجديد)، الشرقية، مصر',
-      href: 'https://maps.app.goo.gl/AYhLxvkZGFpfky8x6',
+      href: 'https://maps.app.goo.gl/7kobi44qqovf3JmC6',
     },
     {
       icon: <FaClock />,
