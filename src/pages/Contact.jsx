@@ -186,10 +186,10 @@ const Contact = () => {
                 </div>
                 <div>
                   <label className="block text-gray-700 font-semibold mb-2 text-sm md:text-base">
-                    البريد الإلكتروني
+                    رقم الهاتف
                   </label>
                   <input
-                    type="number"
+                     type="tel"
                     value={contactForm.email}
                     onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                     className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-[var(--gradient-start)] focus:ring-2 focus:ring-[var(--gradient-start)]/20 transition-all duration-300"
