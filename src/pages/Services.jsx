@@ -24,8 +24,8 @@ const Services = () => {
       id: 3,
       title: 'معارض رسالة',
       description: 'تُعد معارض جمعية رسالة الخيرية نافذة أمل تُوفر الملابس والاحتياجات الأساسية للأسر المستحقة مجانًا، في أجواء تحفظ الكرامة وتُعزز روح التكافل.',
-      images: ['/images/gallery/clothes.jpg', '/images/gallery/clothes-2.jpg'],
-      videos: ['/images/gallery/clothes-video.mp4'],
+      images: ['/images/gallary/clothes.jpg', '/images/gallary/clothes-2.jpg'],
+      videos: ['/images/gallary/clothes-video.mp4'],
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const Services = () => {
       id: 6,
       title: 'الزيارات',
       description: 'نشاط الزيارات في جمعية رسالة هو لحظة إنسانية صادقة، يذهب فيها المتطوعون بأنفسهم لاحتضان قلوب أنهكها المرض أو الوحدة، حاملين دفء الكلام ولمسة الأمل لمن ظنّ أن لا أحد يطرق بابه.',
-      images: ['/images/visit/Visit.jpg', '/images/visit/Visit-2.jpg'],
+      images: ['/images/visit/visit.jpg', '/images/visit/visit-2.jpg'],
       videos: ['/images/visit/Visit-video.mp4'],
     },
      {
