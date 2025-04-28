@@ -30,9 +30,9 @@ const Contact = () => {
     {
       icon: <FaPhone />,
       title: 'الهاتف',
-      content: '+201065309906',
+      content: '+20 106 530 9906',
       href: 'tel:+201065309906',
-      content: '+201159092590',
+      content: '+20 115 909 2590',
       href: 'tel:+201159092590',
     },
     {
