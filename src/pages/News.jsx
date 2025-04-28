@@ -186,10 +186,6 @@ const News = () => {
                     {news.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <button className="flex items-center text-[var(--gradient-start)] font-semibold group text-sm md:text-base">
-                      اقرأ المزيد
-                      <FaArrowLeft className="mr-2 transform group-hover:-translate-x-1 transition-transform" />
-                    </button>
                     <span className="flex items-center text-xs md:text-sm px-3 py-1 rounded-full bg-gray-100 text-gray-600">
                       <FaTag className="ml-2 text-[var(--gradient-start)]" />
                       {news.categoryName}
