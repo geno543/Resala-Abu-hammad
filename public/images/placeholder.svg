@@ -1,9 +1,0 @@
-<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#f0f0f0"/>
-  <text x="50%" y="50%" font-family="Arial" font-size="24" fill="#666666" text-anchor="middle" dy=".3em">
-    Placeholder Image
-  </text>
-  <text x="50%" y="60%" font-family="Arial" font-size="16" fill="#999999" text-anchor="middle" dy=".3em">
-    400 x 300
-  </text>
-</svg>
