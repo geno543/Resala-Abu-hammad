@@ -18,7 +18,7 @@ const Services = () => {
       title: 'أنوار رسالة',
       description: 'توفير المواد التعليمية وخدمات التدريس الخصوصي والمستلزمات المدرسية للطلاب من العائلات ذات الدخل المنخفض.',
       images: ['/images/light/light.jpg', '/images/light/light-2.jpg'],
-      videos: ['/videos/light/light-video.mp4'],
+      videos: ['/images/light/light-video.mp4'],
     },
     {
       id: 3,
@@ -52,8 +52,8 @@ const Services = () => {
       id: 7,
       title: 'أصدقاء البيئة',
       description: 'نشاط أصدقاء البيئة في جمعية رسالة هو نداء حبّ للأرض، يقوده متطوعون يُنقّبون عن الأمل بين النفايات، يزرعون الأشجار وينظفون الشوارع، ليصنعوا فرقًا حقيقيًا ويمنحوا الطبيعة حقها في الحياة.',
-      images: ['/images/environment/environment-photo.jpg', '/images/environment/environment-photo-2.jpg'],
-      videos: ['/images/environment/environment-video.mp4'],
+      images: ['/images/environment/Environment-photo.jpg', '/images/environment/Environment-photo-2.jpg'],
+      videos: ['/images/environment/Environment-video.mp4'],
     },
      {
       id: 8,
@@ -87,7 +87,7 @@ const Services = () => {
       id: 12,
       title: 'ارحموا للرفق بالحيوان',
       description: 'نشاط "ارحموا للرفق بالحيوان" في جمعية رسالة هو نداء إنساني صادق، حيث يتوجه المتطوعون بقلوب رحيمة لرعاية الحيوانات المعذبة والمشردة، يوفرون لهم الغذاء والعلاج والمأوى، في محاولة لتخفيف معاناتهم ومنحهم فرصة جديدة للحياة بسلام ورفق',
-      images: ['/images/animal/animal.jpg', '/images/animal/animal-2.jpg'],
+      images: ['/images/animal/animal-photo.jpg', '/images/animal/animal-photo-2.jpg'],
       videos: ['/images/animal/animal-video.mp4'],
     },
   ];
