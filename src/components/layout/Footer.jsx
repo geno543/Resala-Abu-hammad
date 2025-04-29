@@ -116,19 +116,25 @@ const Footer = () => {
                 ابق على اطلاع بأحدث أخبارنا وأنشطتنا.
               </p>
               <form className="space-y-3">
-                <div className="relative">
+              <div className="relative space-y-4">
   <div>
+    <label htmlFor="email" className="sr-only">Email Address</label>
     <input
+      id="email"
       type="email"
       placeholder="أدخل بريدك الإلكتروني"
       className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
+      aria-label="Email Address"
     />
   </div>
   <div>
+    <label htmlFor="phone" className="sr-only">Phone Number</label>
     <input
+      id="phone"
       type="tel"
       placeholder="أدخل رقم الهاتف"
       className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
+      aria-label="Phone Number"
     />
   </div>
 </div>
