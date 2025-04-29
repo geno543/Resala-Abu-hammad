@@ -32,9 +32,8 @@ const Donate = () => {
   };
 
   const impactMetrics = [
-    { icon: <FaUsers />, number: '+1000', label: 'عائلة تم دعمها' },
-    { icon: <FaChartLine />, number: '95%', label: 'من الأموال للبرامج' },
-    { icon: <FaHandHoldingHeart />, number: '+50', label: 'مشروع نشط' }
+    { icon: <FaUsers />, number: '+500', label: 'عائلة تم دعمها' },
+    { icon: <FaHandHoldingHeart />, number: '+10', label: 'مشروع نشط' }
   ];
 
   return (
