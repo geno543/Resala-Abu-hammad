@@ -26,13 +26,17 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: <FaFacebook />, url: 'https://www.facebook.com/Resala.AboHamad/' },
+    { icon: <FaInstagram />, url: '#' },
+    { icon: <FaTwitter />, url: '#' },
+    { icon: <FaYoutube />, url: '#' }
   ];
 
   // Added form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate email
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+    // Validate email with a more robust pattern
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email || !emailPattern.test(email)) {
       setSubscribeStatus('الرجاء إدخال بريد إلكتروني صالح');
       return;
     }
@@ -71,7 +75,7 @@ const Footer = () => {
               <p className="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
                 نحدث فرقًا في مجتمعنا من خلال التعاطف والتفاني والوحدة.
               </p>
-              <div className="flex space-x-reverse space-x-4">
+              <div className="flex space-x-4 rtl:space-x-reverse">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
