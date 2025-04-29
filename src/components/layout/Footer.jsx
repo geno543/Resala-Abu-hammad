@@ -115,38 +115,40 @@ const Footer = () => {
               <p className="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
                 ابق على اطلاع بأحدث أخبارنا وأنشطتنا.
               </p>
-              <form className="space-y-3">
-              <div className="relative space-y-4">
-  <div>
-    <label htmlFor="email" className="sr-only">Email Address</label>
-    <input
-      id="email"
-      type="email"
-      placeholder="أدخل بريدك الإلكتروني"
-      className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
-      aria-label="Email Address"
-    />
+             <form className="space-y-3">
+  <div className="relative space-y-4">
+    <div>
+      <label htmlFor="email" className="sr-only">البريد الإلكتروني</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="أدخل بريدك الإلكتروني"
+        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
+        aria-label="البريد الإلكتروني"
+        dir="rtl"
+      />
+    </div>
+    <div>
+      <label htmlFor="phone" className="sr-only">رقم الهاتف</label>
+      <input
+        id="phone"
+        type="tel"
+        placeholder="أدخل رقم الهاتف"
+        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
+        aria-label="رقم الهاتف"
+        dir="rtl"
+      />
+    </div>
   </div>
-  <div>
-    <label htmlFor="phone" className="sr-only">Phone Number</label>
-    <input
-      id="phone"
-      type="tel"
-      placeholder="أدخل رقم الهاتف"
-      className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
-      aria-label="Phone Number"
-    />
-  </div>
-</div>
-                <motion.button
-                  type="submit"
-                  className="btn-primary w-full"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  اشترك
-                </motion.button>
-              </form>
+  <motion.button
+    type="submit"
+    className="btn-primary w-full"
+    whileHover={{ scale: 1.02 }}
+    whileTap={{ scale: 0.98 }}
+  >
+    اشترك
+  </motion.button>
+</form>
             </motion.div>
           </div>
 
