@@ -109,7 +109,7 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-              {/* Newsletter */}
+                {/* Newsletter */}
              <motion.div {...fadeInUp}>
                <h3 className="text-lg font-semibold text-white mb-4 md:mb-6">النشرة الإخبارية</h3>
                <p className="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
@@ -120,13 +120,6 @@ const Footer = () => {
                    <input
                      type="email"
                      placeholder="أدخل بريدك الإلكتروني"
-                     className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
-                   />
-                   </div>
-                   <div className="relative">
-                   <input
-                     type="tel"
-                     placeholder="أدخل رقم الهاتف"
                      className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
                    />
                  </div>
