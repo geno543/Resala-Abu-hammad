@@ -17,7 +17,7 @@ const About = () => {
       role: 'متطوع و مسؤول سابق',
       achievement: 'أسس فادي عددًا من الدروس الدينية وبرامج التربية ضمن نشاط أنوار رسالة، ولا يزال يواصل عطاؤه بإيمان وجهد لا ينقطع.',
       timing: 'مارس 2025',
-      image: '/images/achievements/education.jpg',
+      image: '/images/Achievements/fady.jpg',
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ const About = () => {
       role: 'مسؤول النشاط الطبي',
       achievement: 'ضمن جهوده المنتظمة في العمل الخيري، يواصل كريم متابعة النشاط الطبي وتوفير وصرف الدواء للمحتاجين... عطاء متواصل يستحق التقدير!',
       timing: 'يناير 2025',
-      image: '/images/achievements/medical.jpg',
+      image: '/images/Achievements/kareem.jpg',
     },
   ];
 
