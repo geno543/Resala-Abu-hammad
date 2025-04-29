@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHeart,
   FaBook,
@@ -7,50 +7,119 @@ import {
   FaUsers,
   FaCheck,
   FaArrowLeft,
-  FaStar,
-  FaQuoteRight
-} from 'react-icons/fa';
+  FaQuoteRight,
+} from "react-icons/fa";
 
 const Volunteer = () => {
   const [selectedActivities, setSelectedActivities] = useState([]);
+  const [status, setStatus] = useState(null); // null | 'success' | 'error'
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    age: '',
-    address: '',
-    ID: '',
-    GraduationDate: '',
+    name: "",
+    email: "",
+    phone: "",
+    age: "",
+    id: "",
+    address: "",
+    experience: "",
   });
+
+  const handleCheckboxChange = (activity) => {
+    setSelectedActivities((prevSelected) =>
+      prevSelected.includes(activity)
+        ? prevSelected.filter((item) => item !== activity)
+        : [...prevSelected, activity]
+    );
+  };
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const payload = {
+      data: {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        age: formData.age,
+        id: formData.id,
+        address: formData.address,
+        experience: formData.experience,
+        activities: selectedActivities.join(", "),
+      },
+    };
+
+    try {
+      const res = await fetch(process.env.REACT_APP_SHEETDB_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          age: "",
+          address: "",
+          experience: "",
+          id: "",
+        });
+        setSelectedActivities([]);
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   age: "",
+  //   address: "",
+  //   ID: "",
+  //   GraduationDate: "",
+  // });
 
   const activities = [
     {
-      id: 'food',
+      id: "food",
       icon: <FaHeart />,
-      title: 'توزيع الطعام',
-      description: 'المساعدة في توزيع حزم الطعام للعائلات المحتاجة',
-      impact: 'أكثر من 1000 وجبة شهريًا',
+      title: "توزيع الطعام",
+      description: "المساعدة في توزيع حزم الطعام للعائلات المحتاجة",
+      impact: "أكثر من 1000 وجبة شهريًا",
+      value: "",
     },
     {
-      id: 'education',
+      id: "education",
       icon: <FaBook />,
-      title: 'دعم التعليم',
-      description: 'تقديم التدريس الخصوصي والمساعدة التعليمية',
-      impact: 'دعم أكثر من 200 طالب',
+      title: "دعم التعليم",
+      description: "تقديم التدريس الخصوصي والمساعدة التعليمية",
+      impact: "دعم أكثر من 200 طالب",
     },
     {
-      id: 'medical',
+      id: "medical",
       icon: <FaHandHoldingMedical />,
-      title: 'المساعدة الطبية',
-      description: 'الدعم في المخيمات الطبية ومبادرات الصحة',
-      impact: 'خدمة أكثر من 500 مريض',
+      title: "المساعدة الطبية",
+      description: "الدعم في المخيمات الطبية ومبادرات الصحة",
+      impact: "خدمة أكثر من 500 مريض",
     },
     {
-      id: 'community',
+      id: "community",
       icon: <FaUsers />,
-      title: 'فعاليات المجتمع',
-      description: 'المساعدة في تنظيم وإدارة فعاليات المجتمع',
-      impact: 'أكثر من 50 فعالية سنويًا',
+      title: "فعاليات المجتمع",
+      description: "المساعدة في تنظيم وإدارة فعاليات المجتمع",
+      impact: "أكثر من 50 فعالية سنويًا",
     },
   ];
 
@@ -73,35 +142,46 @@ const Volunteer = () => {
   ];
 
   const toggleActivity = (activityId) => {
-    setSelectedActivities(prev =>
+    setSelectedActivities((prev) =>
       prev.includes(activityId)
-        ? prev.filter(id => id !== activityId)
+        ? prev.filter((id) => id !== activityId)
         : [...prev, activityId]
     );
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log({ ...formData, selectedActivities });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   return (
     <div className="min-h-screen">
+      <AnimatePresence>
+        {status === "success" && (
+         <motion.div
+         initial={{ opacity: 0, y: 30 }}
+         animate={{ opacity: 1, y: 0 }}
+         exit={{ opacity: 0, y: 30 }}
+         transition={{ duration: 0.4 }}
+         className="z-50 fixed top-28 left-10 mt-6 p-4 rounded-xl bg-green-100 border border-green-300 text-green-800 text-center font-semibold"
+       >
+         ✅ تم إرسال النموذج بنجاح!
+       </motion.div>
+        )}
+
+        {status === "error" && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.4 }}
+            className="z-50 fixed top-28 left-10 mt-6 p-4 rounded-xl bg-red-100 border border-red-300 text-red-800 text-center font-semibold"
+          >
+            ❌ حدث خطأ أثناء الإرسال. حاول مرة أخرى.
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Hero Section */}
       <div className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[var(--gradient-start)] to-[var(--gradient-end)]">
@@ -129,7 +209,8 @@ const Volunteer = () => {
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
-            انضم إلى فريقنا المتفاني من المتطوعين وساعد في إحداث تأثير إيجابي في مجتمعنا
+            انضم إلى فريقنا المتفاني من المتطوعين وساعد في إحداث تأثير إيجابي في
+            مجتمعنا
           </motion.p>
         </div>
       </div>
@@ -149,10 +230,11 @@ const Volunteer = () => {
               {activities.map((activity) => (
                 <motion.button
                   key={activity.id}
+                  onChange={() => handleCheckboxChange(activity)}
                   className={`p-4 md:p-6 rounded-xl border-2 text-right group transition-all duration-300 ${
                     selectedActivities.includes(activity.id)
-                      ? 'border-[var(--gradient-start)] bg-gradient-to-br from-[var(--gradient-start)]/5 to-[var(--gradient-end)]/5'
-                      : 'border-gray-200 hover:border-gray-300'
+                      ? "border-[var(--gradient-start)] bg-gradient-to-br from-[var(--gradient-start)]/5 to-[var(--gradient-end)]/5"
+                      : "border-gray-200 hover:border-gray-300"
                   }`}
                   onClick={() => toggleActivity(activity.id)}
                   whileHover={{ scale: 1.02 }}
@@ -172,15 +254,23 @@ const Volunteer = () => {
                       )}
                     </AnimatePresence>
                     <div className="flex-grow mx-3">
-                      <h3 className="text-base md:text-lg font-bold mb-1 md:mb-2">{activity.title}</h3>
-                      <p className="text-gray-600 mb-1 md:mb-2 text-sm md:text-base">{activity.description}</p>
-                      <p className="text-xs md:text-sm text-[var(--gradient-start)]">{activity.impact}</p>
+                      <h3 className="text-base md:text-lg font-bold mb-1 md:mb-2">
+                        {activity.title}
+                      </h3>
+                      <p className="text-gray-600 mb-1 md:mb-2 text-sm md:text-base">
+                        {activity.description}
+                      </p>
+                      <p className="text-xs md:text-sm text-[var(--gradient-start)]">
+                        {activity.impact}
+                      </p>
                     </div>
-                    <div className={`text-2xl md:text-3xl ml-3 md:ml-4 transition-all duration-300 ${
-                      selectedActivities.includes(activity.id)
-                        ? 'text-[var(--gradient-start)]'
-                        : 'text-gray-400'
-                    } group-hover:scale-110`}>
+                    <div
+                      className={`text-2xl md:text-3xl ml-3 md:ml-4 transition-all duration-300 ${
+                        selectedActivities.includes(activity.id)
+                          ? "text-[var(--gradient-start)]"
+                          : "text-gray-400"
+                      } group-hover:scale-110`}
+                    >
                       {activity.icon}
                     </div>
                   </div>
@@ -208,11 +298,17 @@ const Volunteer = () => {
                   transition={{ delay: index * 0.2 }}
                 >
                   <FaQuoteRight className="absolute top-4 left-4 text-xl md:text-2xl text-[var(--gradient-start)]/10" />
-                  <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base text-right">{testimonial.quote}</p>
+                  <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base text-right">
+                    {testimonial.quote}
+                  </p>
                   <div className="flex items-center justify-end">
                     <div className="mr-3">
-                      <h4 className="font-semibold text-right">{testimonial.name}</h4>
-                      <p className="text-xs md:text-sm text-gray-500 text-right">{testimonial.role}</p>
+                      <h4 className="font-semibold text-right">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs md:text-sm text-gray-500 text-right">
+                        {testimonial.role}
+                      </p>
                     </div>
                     <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] flex items-center justify-center text-white">
                       {testimonial.name.charAt(0)}
@@ -236,9 +332,9 @@ const Volunteer = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {[
                   { name: 'name', label: 'الاسم الكامل', type: 'text' },
+                  { name: 'email', label: 'البريد الإلكتروني', type: 'email' },
                   { name: 'phone', label: 'رقم الهاتف', type: 'tel' },
-                  { name: 'age', label: 'العمر', type: 'number' },
-                  { name: 'ID', label: 'الرقم القومي', type: 'number' }
+                  { name: 'age', label: 'العمر', type: 'number' }
                 ].map((field) => (
                   <div key={field.name}>
                     <label className="block text-gray-700 font-semibold mb-2 text-right text-sm md:text-base">
@@ -286,10 +382,12 @@ const Volunteer = () => {
                 type="submit"
                 className={`w-full py-3 md:py-4 px-6 md:px-8 rounded-xl text-base md:text-lg font-semibold flex items-center justify-center group ${
                   selectedActivities.length === 0
-                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                    : 'btn-primary'
+                    ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    : "btn-primary"
                 }`}
-                whileHover={selectedActivities.length > 0 ? { scale: 1.02 } : {}}
+                whileHover={
+                  selectedActivities.length > 0 ? { scale: 1.02 } : {}
+                }
                 whileTap={selectedActivities.length > 0 ? { scale: 0.98 } : {}}
                 disabled={selectedActivities.length === 0}
               >
