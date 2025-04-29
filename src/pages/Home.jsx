@@ -12,7 +12,7 @@ const Home = () => {
   const impactNumbers = [
     { icon: <FaUsers className="animate-float" />, number: '+100', label: 'متطوع' },
     { icon: <FaHandHoldingHeart className="animate-float" />, number: '+30', label: 'قرية مستفيدة' },
-    { icon: <FaHome className="animate-float" />, number: '+500', label: 'عائلة تم دعمها' }
+    { icon: <FaHome className="animate-float" />, number: '+400', label: 'عائلة تم دعمها' }
   ];
 
   return (
