@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useState } from 'react'; // Added useState import
 import {
   FaFacebook,
   FaPhone,
@@ -13,10 +12,6 @@ import {
 } from 'react-icons/fa';
 
 const Footer = () => {
-  // Added state for email input and form status
-  const [email, setEmail] = useState('');
-  const [subscribeStatus, setSubscribeStatus] = useState('');
-
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -26,31 +21,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: <FaFacebook />, url: 'https://www.facebook.com/Resala.AboHamad/' },
-    { icon: <FaInstagram />, url: '#' },
-    { icon: <FaTwitter />, url: '#' },
-    { icon: <FaYoutube />, url: '#' }
   ];
-
-  // Added form submission handler
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Validate email with a more robust pattern
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!email || !emailPattern.test(email)) {
-      setSubscribeStatus('الرجاء إدخال بريد إلكتروني صالح');
-      return;
-    }
-    
-    // Here you would typically call an API to handle the subscription
-    console.log('Subscribing email:', email);
-    setSubscribeStatus('تم الاشتراك بنجاح!');
-    setEmail('');
-    
-    // Reset status message after 3 seconds
-    setTimeout(() => {
-      setSubscribeStatus('');
-    }, 3000);
-  };
 
   return (
     <footer className="relative overflow-hidden">
@@ -75,7 +46,7 @@ const Footer = () => {
               <p className="text-gray-300 mb-6 leading-relaxed text-sm md:text-base">
                 نحدث فرقًا في مجتمعنا من خلال التعاطف والتفاني والوحدة.
               </p>
-              <div className="flex space-x-4 rtl:space-x-reverse">
+              <div className="flex space-x-reverse space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
@@ -138,28 +109,20 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-             {/* Newsletter - Updated with form handling */}
+                {/* Newsletter */}
              <motion.div {...fadeInUp}>
                <h3 className="text-lg font-semibold text-white mb-4 md:mb-6">النشرة الإخبارية</h3>
                <p className="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
                  ابق على اطلاع بأحدث أخبارنا وأنشطتنا.
                </p>
-               <form className="space-y-3" onSubmit={handleSubmit}>
+               <form className="space-y-3">
                  <div className="relative">
                    <input
                      type="email"
                      placeholder="أدخل بريدك الإلكتروني"
-                     value={email}
-                     onChange={(e) => setEmail(e.target.value)}
                      className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
-                     required
                    />
                  </div>
-                 {subscribeStatus && (
-                   <p className={`text-sm ${subscribeStatus.includes('صالح') ? 'text-red-400' : 'text-green-400'}`}>
-                     {subscribeStatus}
-                   </p>
-                 )}
                  <motion.button
                    type="submit"
                    className="btn-primary w-full"
