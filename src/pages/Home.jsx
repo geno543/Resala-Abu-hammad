@@ -129,7 +129,6 @@ const Home = () => {
                   <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_400px_at_50%_50%,rgba(255,255,255,0.1),transparent)] group-hover:opacity-30 transition-opacity duration-300" />
                 </div>
                 <div className="p-4 md:p-8 bg-white group-hover:bg-gray-50 transition-colors duration-300">
-                  <span className="text-xs md:text-sm font-semibold text-[var(--gradient-start)]">١٩ أبريل ٢٠٢٥</span>
                   <h3 className="text-lg md:text-xl font-bold mt-2 mb-2 md:mb-3 group-hover:text-[var(--gradient-start)] transition-colors duration-300">
                     إحداث فرق في مجتمعنا
                   </h3>
