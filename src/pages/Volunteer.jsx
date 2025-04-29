@@ -238,7 +238,7 @@ const Volunteer = () => {
                   { name: 'name', label: 'الاسم الكامل', type: 'text' },
                   { name: 'phone', label: 'رقم الهاتف', type: 'tel' },
                   { name: 'age', label: 'العمر', type: 'number' },
-                  { name: 'ID', label: 'الرقم القومي', type: 'number' },
+                  { name: 'ID', label: 'الرقم القومي', type: 'number' }
                 ].map((field) => (
                   <div key={field.name}>
                     <label className="block text-gray-700 font-semibold mb-2 text-right text-sm md:text-base">
