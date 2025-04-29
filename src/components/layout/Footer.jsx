@@ -122,6 +122,11 @@ const Footer = () => {
                     placeholder="أدخل بريدك الإلكتروني"
                     className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
                   />
+                  <input
+                    type="tel"
+                    placeholder="أدخل رقم الهاتف"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-[var(--gradient-start)] transition-colors duration-300"
+                  />
                 </div>
                 <motion.button
                   type="submit"
