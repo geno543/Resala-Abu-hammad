@@ -236,9 +236,9 @@ const Volunteer = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {[
                   { name: 'name', label: 'الاسم الكامل', type: 'text' },
-                  { name: 'email', label: 'البريد الإلكتروني', type: 'email' },
                   { name: 'phone', label: 'رقم الهاتف', type: 'tel' },
-                  { name: 'age', label: 'العمر', type: 'number' }
+                  { name: 'age', label: 'العمر', type: 'number' },
+                  { name: 'ID', label: 'الرقم القومي', type: 'number' },
                 ].map((field) => (
                   <div key={field.name}>
                     <label className="block text-gray-700 font-semibold mb-2 text-right text-sm md:text-base">
