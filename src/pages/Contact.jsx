@@ -270,7 +270,7 @@ const Contact = () => {
                 </motion.button>
                 {isSuccess && (
                   <div className="absolute top-0 w-full h-full bg-white bg-opacity-45 mt-3 text-2xl flex justify-center items-center text-center text-green-500">
-                   Email Sent Successfully
+                   تم ارسال الرسالة بنجاح
                   </div>
                 )}
                 </form>
