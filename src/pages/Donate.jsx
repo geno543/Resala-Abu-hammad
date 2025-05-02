@@ -9,7 +9,8 @@ import {
   FaChartLine,
   FaUsers,
   FaCheckCircle,
-  FaArrowLeft
+  FaArrowLeft,
+  FaHome
 } from 'react-icons/fa';
 
 const Donate = () => {
@@ -33,7 +34,7 @@ const Donate = () => {
 
   const impactMetrics = [
     { icon: <FaUsers />, number: '+500', label: 'عائلة تم دعمها' },
-    { icon: <FaHandHoldingHeart />, number: '+10', label: 'مشروع نشط' }
+    { icon: <FaHandHoldingHeart />, number: '+10', label: 'مشروع نشط' },
     { icon: <FaHome />, number: '+20', label: 'قرية مستفيدة من تبرعك' }
   ];
 

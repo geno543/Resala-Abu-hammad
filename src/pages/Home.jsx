@@ -91,7 +91,7 @@ const Home = () => {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl md:text-5xl text-[var(--gradient-start)] mb-4 md:mb-6 transform group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
+                <div className="w-fit mx-auto text-4xl md:text-5xl text-[var(--gradient-start)] mb-4 md:mb-6 transform group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
                 <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
                   {item.number}
                 </div>
@@ -152,7 +152,7 @@ const Home = () => {
       {/* Call to Action */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)]" />
-        <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] bg-repeat opacity-10" />
+        <div className="absolute inset-0  bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] bg-repeat opacity-10" />
         
         <div className="relative py-16 md:py-24">
           <div className="container mx-auto px-4 text-center">
@@ -169,8 +169,8 @@ const Home = () => {
                   href="/volunteer"
                   className="btn-primary bg-white text-gray-800 hover:bg-gray-100 group"
                 >
-                  <span className="relative z-10">كن متطوعًا</span>
-                  <FaArrowLeft className="mr-2 inline-block transform group-hover:-translate-x-1 transition-transform" />
+                  <span className="relative z-10 text-white">كن متطوعًا</span>
+                  <FaArrowLeft className=" text-white mr-2 inline-block transform group-hover:-translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="/donate"

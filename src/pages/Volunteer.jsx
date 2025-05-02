@@ -12,7 +12,7 @@ import {
 
 const Volunteer = () => {
   const [selectedActivities, setSelectedActivities] = useState([]);
-  const [status, setStatus] = useState(null); // null | 'success' | 'error'
+  const [status, setStatus] = useState(null);  
 
   const [formData, setFormData] = useState({
     name: "",
