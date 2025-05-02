@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Resala-Abu-hammad/static/css/main.188fc051.css",
+    "main.js": "/Resala-Abu-hammad/static/js/main.79fc4b97.js",
+    "index.html": "/Resala-Abu-hammad/index.html",
+    "main.188fc051.css.map": "/Resala-Abu-hammad/static/css/main.188fc051.css.map",
+    "main.79fc4b97.js.map": "/Resala-Abu-hammad/static/js/main.79fc4b97.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.188fc051.css",
+    "static/js/main.79fc4b97.js"
+  ]
+}
